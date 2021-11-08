@@ -16,4 +16,29 @@ public class NumberManager {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
+    
+    public String getDLCategory(String regnum){
+        String dlcategory="Unknown Licence Category";
+        switch (Character.toUpperCase(regnum.charAt(0))) {
+            case 'C':
+            case 'K':
+            case 'P':
+            case 'D':
+                dlcategory="Light Vehicle";
+                break;
+            case 'L':
+            case 'N':
+                dlcategory="Heavy Vehicle";
+                break;
+            case 'M':
+            case 'B':
+                dlcategory="Motor Bicycle";
+                break;
+            case 'Y':
+            case 'A':
+                dlcategory="Three Wheeler";
+                break;
+        }
+        return dlcategory;
+    }
 }
